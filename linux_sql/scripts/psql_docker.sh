@@ -5,6 +5,7 @@ input_cmd_arg=$1
 db_username=$2
 db_password=$3
 
+#validate number of arguments
 if [ "$#" -ne 1 ] && [ "$#" -ne 3 ]; then
   echo "Illegal number of parameters"
   echo "Usage: ./scripts/psql_docker.sh start|stop|create [db_username][db_password]"
