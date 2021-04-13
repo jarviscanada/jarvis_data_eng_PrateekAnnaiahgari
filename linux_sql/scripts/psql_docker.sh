@@ -13,7 +13,7 @@ if [ "$#" -ne 1 ] && [ "$#" -ne 3 ]; then
 fi
 
 #start docker if docker server is not running
-if [ ! "$(sudo systemctl status docker )" ]; then
+if [ ! "$(sudo systemctl status docker)" ]; then
   systemctl start docker
 fi
 
