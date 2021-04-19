@@ -52,10 +52,10 @@ In the first step of the project, the `psql_docker.sh` script was developed. The
   * * * * * bash path/to/linux_sql/scripts/host_usage.sh
   psql_host psql_port host_agent db_username db_password > /tmp/host_usage.log
   ```
-- queries.sql - use sql queries to answer the following business questions:
-    1.Which node has the highest memory
-    2.How much memory (percentage) is on an average for every 5 min by each host
-    3.Detect unhealthy nodes using number of datapoints for every 5 min
+- queries.sql - use sql queries to answer the following business questions:  
+    1.Which node has the highest memory  
+    2.How much memory (percentage) is on an average for every 5 min by each host  
+    3.Detect unhealthy nodes using number of datapoints for every 5 min  
   ```
   psql -h psql_host -U db_username -d host_agent -f sql/queries.sql
   ```
