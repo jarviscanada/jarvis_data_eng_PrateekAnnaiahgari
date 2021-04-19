@@ -25,7 +25,6 @@ In the first step of the project, the `psql_docker.sh` script was developed. The
 ![Architecture](./assets/architecture.PNG)
 
 ## Scripts
-Shell script descirption and usage (use markdown code block for script usage)
 - psql_docker.sh - create/start/stop a PostgreSQL container
   ```
   #To create a psql instance
