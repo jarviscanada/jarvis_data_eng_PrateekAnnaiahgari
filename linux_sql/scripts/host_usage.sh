@@ -39,4 +39,4 @@ insert_stmt="INSERT INTO host_usage (timestamp,host_id,memory_free,cpu_idle,cpu_
 export PGPASSWORD=$psql_password #Set default password to connect to instance
 psql -h "$psql_host" -p "$psql_port" -U "$psql_user" -d "$db_name" -c "$insert_stmt"
 
-exit 0
+exit $?
