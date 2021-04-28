@@ -1,7 +1,5 @@
 package ca.jrvs.apps.grep;
 
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,6 +9,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+import org.apache.log4j.BasicConfigurator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JavaGrepImpl implements JavaGrep {
 
@@ -25,7 +26,20 @@ public class JavaGrepImpl implements JavaGrep {
       throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outFile");
     }
 
-    //Use default logger config
+    //use default logger config
+    BasicConfigurator.configure();
+
+    JavaGrepImpl javaGrepImp = new JavaGrepImpl();
+    javaGrepImp.setRegex(args[0]);
+    javaGrepImp.setRootPath(args[1]);
+    javaGrepImp.setOutFile(args[2]);
+
+    try {
+      javaGrepImp.process();
+    } catch (Exception ex) {
+      javaGrepImp.logger.error(ex.getMessage(), ex);
+    }
+
   }
 
 
@@ -34,12 +48,12 @@ public class JavaGrepImpl implements JavaGrep {
     List<String> matchedLines = new ArrayList<>();
     for (File file : listFiles(getRootPath())) {
       for (String line : readLines(file)) {
-        if (containsPattern(getRegex())) {
+        if (containsPattern(line)) {
           matchedLines.add(line);
         }
       }
     }
-  writeToFile(matchedLines);
+    writeToFile(matchedLines);
   }
 
   @Override
@@ -64,7 +78,6 @@ public class JavaGrepImpl implements JavaGrep {
     } catch (IOException e) {
       logger.error("Unable to read lines from file", e);
     }
-
     return lines;
   }
 

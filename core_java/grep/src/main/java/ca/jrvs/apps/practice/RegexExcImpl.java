@@ -1,12 +1,13 @@
 package ca.jrvs.apps.practice;
 
+import java.util.Locale;
 import java.util.regex.Pattern;
 
 public class RegexExcImpl implements RegexExc {
 
   @Override
   public boolean matchJpeg(String filename) {
-    return Pattern.matches(".+(\\.jpg|\\.jpeg)$",filename);
+    return Pattern.matches(".+(\\.jpg|\\.jpeg)$",filename.toLowerCase());
   }
 
   @Override

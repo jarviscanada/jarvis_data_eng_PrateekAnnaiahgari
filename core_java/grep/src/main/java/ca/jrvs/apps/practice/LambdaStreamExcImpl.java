@@ -7,8 +7,12 @@ import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LambdaStreamExcImpl implements LambdaStreamExc {
+
+  private final Logger logger = LoggerFactory.getLogger(LambdaStreamExc.class);
 
   /**
    * Create a String stream from array
@@ -177,5 +181,28 @@ public class LambdaStreamExcImpl implements LambdaStreamExc {
   @Override
   public Stream<Integer> flatNestedInt(Stream<List<Integer>> ints) {
     return ints.flatMap(list -> list.stream().map(num -> num * num));
+  }
+
+  public static void main(String[] args) {
+    LambdaStreamExcImpl ls = new LambdaStreamExcImpl();
+    Stream<String> numberStrings= ls.createStrStream("one","two","three","four","five");
+    Stream<String> upperClassNumberStrings = ls.toUpperCase("one","two","three","four","five");
+    Stream<String> filteredStream=ls.filter(numberStrings,"f");
+    int[] numArray= {1,2,3,4,5};
+    IntStream numIntStream=ls.createIntStream(numArray);
+    //List<String> numStringList=ls.toList(numberStrings);
+    //List<Integer> numIntList= ls.toList(numIntStream);
+    IntStream anotherIntStream = ls.createIntStream(1,5);
+    //DoubleStream sqrtStream=ls.squareRootIntStream(numIntStream);
+    //IntStream oddNumStream= ls.getOdd(numIntStream);
+    Consumer<String> printer = ls.getLambdaPrinter("Begin->","<-End");
+    String[] messages = {"Hola","Hello","Nameste"};
+    ls.printMessages(messages, printer);
+    ls.printOdd(numIntStream,printer);
+    List<Integer> numList1 = Arrays.asList(1,2,3) ;
+    List<Integer> numList2 = Arrays.asList(4,5,6) ;
+    List<Integer> numList3 = Arrays.asList(7,8,9) ;
+    Stream<List<Integer>> streamOfIntList=Stream.of(numList1,numList2,numList3);
+    Stream<Integer> squareAll= ls.flatNestedInt(streamOfIntList);
   }
 }
