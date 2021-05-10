@@ -37,7 +37,7 @@ public class JavaGrepImpl implements JavaGrep {
     try {
       javaGrepImp.process();
     } catch (Exception ex) {
-      javaGrepImp.logger.error(ex.getMessage(), ex);
+      javaGrepImp.logger.error("Error during pattern matching process", ex);
     }
 
   }

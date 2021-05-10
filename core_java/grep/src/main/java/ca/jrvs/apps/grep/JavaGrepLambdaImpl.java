@@ -25,7 +25,7 @@ public class JavaGrepLambdaImpl extends JavaGrepImpl {
       filesList = walk.filter(Files::isRegularFile)
           .map(x -> x.toFile()).collect(Collectors.toList());
     } catch (IOException e) {
-      logger.error(e.getMessage(), e);
+      logger.error("Error while listing files in directory", e);
     }
     return filesList;
   }
@@ -36,7 +36,7 @@ public class JavaGrepLambdaImpl extends JavaGrepImpl {
     try (Stream<String> stream = Files.lines(Paths.get(inputFile.toURI()))) {
       lines = stream.collect(Collectors.toList());
     } catch (IOException e) {
-      logger.error(e.getMessage(), e);
+      logger.error("Error while reading lines from the File", e);
     }
     return lines;
   }
@@ -48,7 +48,7 @@ public class JavaGrepLambdaImpl extends JavaGrepImpl {
       try {
         writer.write(line + System.lineSeparator());
       } catch (IOException e) {
-        logger.error(e.getMessage(), e);
+        logger.error("Error while writing to the file", e);
       }
     });
     writer.close();
@@ -77,7 +77,7 @@ public class JavaGrepLambdaImpl extends JavaGrepImpl {
     try {
       javaGrepLambdaImpl.process();
     } catch (Exception ex) {
-      javaGrepLambdaImpl.logger.error(ex.getMessage(), ex);
+      javaGrepLambdaImpl.logger.error("Error during pattern matching process", ex);
     }
   }
 
