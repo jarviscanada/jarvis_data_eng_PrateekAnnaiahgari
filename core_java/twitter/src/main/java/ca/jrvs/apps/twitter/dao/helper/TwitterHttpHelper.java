@@ -89,23 +89,4 @@ public class TwitterHttpHelper implements HttpHelper {
     }
   }
 
-  public static void main(String[] args) {
-    String consumerKey = System.getenv("consumerKey");
-    String consumerSecret = System.getenv("consumerSecret");
-    String accessToken = System.getenv("accessToken");
-    String tokenSecret = System.getenv("tokenSecret");
-    System.out.println(consumerKey+"|"+ consumerSecret + "|"+accessToken+"|"+tokenSecret);
-    HttpHelper httpHelper = new TwitterHttpHelper(consumerKey,consumerSecret,accessToken,tokenSecret);
-    HttpResponse response = null;
-    try {
-      response = httpHelper.httpPost(new URI("https://api,twitter.com//1.1/statuses/update.json?status=first_tweet2"));
-    } catch (URISyntaxException e) {
-      e.printStackTrace();
-    }
-    try {
-      System.out.println(EntityUtils.toString(response.getEntity()));
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
 }
