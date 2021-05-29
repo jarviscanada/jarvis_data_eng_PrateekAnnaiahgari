@@ -17,9 +17,11 @@ public class TwitterHttpHelperTest {
     String consumerSecret = System.getenv("consumerSecret");
     String accessToken = System.getenv("accessToken");
     String tokenSecret = System.getenv("tokenSecret");
-    System.out.println(consumerKey+"|"+ consumerSecret + "|"+accessToken+"|"+tokenSecret);
-    HttpHelper httpHelper = new TwitterHttpHelper(consumerKey,consumerSecret,accessToken,tokenSecret);
-    HttpResponse response = httpHelper.httpPost(new URI("https://api.twitter.com/1.1/statuses/update.json?status=test_tweet"));
+    System.out.println(consumerKey + "|" + consumerSecret + "|" + accessToken + "|" + tokenSecret);
+    HttpHelper httpHelper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken,
+        tokenSecret);
+    HttpResponse response = httpHelper
+        .httpPost(new URI("https://api.twitter.com/1.1/statuses/update.json?status=test_tweet"));
     System.out.println(EntityUtils.toString(response.getEntity()));
 
   }
