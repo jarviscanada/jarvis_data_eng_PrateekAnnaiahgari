@@ -1,5 +1,5 @@
 # Introduction - JDBC App
-The JBDC application leverages the JDBC driver API's, one of the most used and fundamental java libraries, to connect to a database to access data from the Java application.  
+The JBDC application leverages the JDBC driver APIs, one of the most used and fundamental java libraries, to connect to a database to access data from the Java application.  
 The application uses `JDBC` to provide a connection between the java application and a database in Postgres SQL server running on a `Docker` container using the Postgres Image. The database contains sales order information. The project is packaged using `Maven`.  
 # Implementaiton
 ## ER Diagram
