@@ -11,11 +11,15 @@ import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.service.Service;
 import ca.jrvs.apps.twitter.service.TwitterService;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TwitterCLIApp {
 
   private Controller controller;
 
+  @Autowired
   public TwitterCLIApp(Controller controller) {
     this.controller = controller;
   }
@@ -28,6 +32,7 @@ public class TwitterCLIApp {
           break;
         case "show":
           printTweet(controller.showTweet(args));
+          break;
         case "delete":
           controller.deleteTweet(args).forEach(this::printTweet);
           break;
@@ -56,7 +61,7 @@ public class TwitterCLIApp {
     HttpHelper httpHelper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken,
         tokenSecret);
 
-    CrdDao dao = new TwitterDao(httpHelper);
+    CrdDao<Tweet, String> dao = new TwitterDao(httpHelper);
     Service service = new TwitterService(dao);
     Controller controller = new TwitterController(service);
     TwitterCLIApp app = new TwitterCLIApp(controller);

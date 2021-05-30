@@ -7,12 +7,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
 
+@org.springframework.stereotype.Service
 public class TwitterService implements Service {
 
   private static final int TWEET_TEXT_LIMIT = 140;
   private CrdDao dao;
 
+  @Autowired
   public TwitterService(CrdDao dao) {
     this.dao = dao;
   }

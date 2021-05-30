@@ -2,6 +2,7 @@ package ca.jrvs.apps.twitter.controller;
 
 import static org.junit.Assert.*;
 
+import ca.jrvs.apps.twitter.Util.TweetUtil;
 import ca.jrvs.apps.twitter.dao.TwitterDao;
 import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
 import ca.jrvs.apps.twitter.dao.helper.TwitterHttpHelper;
@@ -55,10 +56,10 @@ public class TwitterControllerIntTest {
   @Test
   public void showTweet() {
     String fields = "created_at,text,coordinates,entities";
-    String id = "1397968864634355722";
+    String id = "1398786151872438273";
     String[] args = {"show", id, fields};
     Tweet tweet = controller.showTweet(args);
-
+    System.out.println(tweet.getText());
     assertNotNull(tweet.getCoordinates());
     assertEquals(text, tweet.getText());
     assertEquals(2, tweet.getCoordinates().getCoordinates().size());
