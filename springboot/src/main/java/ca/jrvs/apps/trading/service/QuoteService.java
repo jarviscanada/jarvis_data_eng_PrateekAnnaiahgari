@@ -5,7 +5,10 @@ import ca.jrvs.apps.trading.dao.MarketDataDao;
 import ca.jrvs.apps.trading.dao.QuoteDao;
 import ca.jrvs.apps.trading.model.domain.IexQuote;
 import ca.jrvs.apps.trading.model.domain.Quote;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,19 +31,6 @@ public class QuoteService {
   }
 
   /**
-   * Find an IexQuote
-   *
-   * @param ticker id
-   * @return IexQuote object
-   * @throws IllegalArgumentException if ticker is invalid
-   */
-  public IexQuote finIexQuoteByTicker(String ticker){
-    return marketDataDao.findById(ticker)
-        .orElseThrow(() -> new IllegalArgumentException(ticker + " is invalid"));
-  }
-  // ToDo: Implement following 5 methods
-
-  /**
    * Update quote table against IEX source
    * -get all quotes from the db
    * - foreach ticker get iexQuote
@@ -50,8 +40,14 @@ public class QuoteService {
    * @throws org.springframework.dao.DataAccessException if unable to retrieve data
    * @throws IllegalArgumentException for invalid input
    */
-  public void updateMarketDao(){
-
+  public void updateMarketData(){
+    List<Quote> quotesList = quoteDao.findAll();
+    List<IexQuote> iexQuotesList = quotesList.stream().map(quote ->
+        findIexQuoteByTicker(quote.getTicker()))
+        .collect(Collectors.toList());
+    quoteDao.saveAll(iexQuotesList.stream()
+        .map(QuoteService::buildQuoteFromIexQuote)
+        .collect(Collectors.toList()));
   }
 
   /**
@@ -60,7 +56,14 @@ public class QuoteService {
    * Set a default value for number field(s).
    */
   protected static Quote buildQuoteFromIexQuote(IexQuote iexQuote){
-    return null;
+    Quote quote = new Quote();
+    quote.setId(iexQuote.getSymbol());
+    quote.setLastPrice(iexQuote.getLatestPrice());
+    quote.setAskPrice(Double.valueOf(iexQuote.getIexAskPrice()));
+    quote.setBidPrice(Double.valueOf(iexQuote.getIexBidPrice()));
+    quote.setAskSize((int) iexQuote.getIexAskSize());
+    quote.setBidSize((int) iexQuote.getIexBidSize());
+    return quote;
   }
 
   /**
@@ -73,14 +76,17 @@ public class QuoteService {
    * @throws IllegalArgumentException if ticker is not found from IEX
    */
   public List<Quote> saveQuotes(List<String> tickers){
-    return null;
+    List<Quote> quotes =marketDataDao.findAllById(tickers).stream()
+        .map(QuoteService::buildQuoteFromIexQuote).collect(Collectors.toList());
+    return quoteDao.saveAll(quotes);
   }
 
   /**
    * Helper method
    */
   public Quote saveQuote(String ticker){
-    return null;
+    Optional<IexQuote> iexQuote = marketDataDao.findById(ticker);
+    return saveQuote(buildQuoteFromIexQuote(iexQuote.get()));
   }
 
   /**
@@ -91,7 +97,8 @@ public class QuoteService {
    * @throws IllegalArgumentException if ticker is invalid
    */
   public IexQuote findIexQuoteByTicker(String ticker){
-    return null;
+    return marketDataDao.findById(ticker)
+        .orElseThrow(() -> new IllegalArgumentException(ticker + " is invalid"));
   }
 
   /**

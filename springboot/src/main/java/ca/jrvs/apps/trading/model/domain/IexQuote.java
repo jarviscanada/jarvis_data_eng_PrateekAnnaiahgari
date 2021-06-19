@@ -595,7 +595,7 @@ public class IexQuote {
   }
 
   @JsonProperty("iexBidSize")
-  public Long getIexBidSize() {
+  public long getIexBidSize() {
     return iexBidSize;
   }
 
@@ -615,7 +615,7 @@ public class IexQuote {
   }
 
   @JsonProperty("iexAskSize")
-  public Long getIexAskSize() {
+  public long getIexAskSize() {
     return iexAskSize;
   }
 

@@ -6,6 +6,8 @@ public class Quote implements Entity<String>{
   private Double lastPrice;
   private Double bidPrice;
   private Integer bidSize;
+  private Double askPrice;
+  private Integer askSize;
 
   public String getTicker() {
     return ticker;
@@ -55,16 +57,13 @@ public class Quote implements Entity<String>{
     this.askSize = askSize;
   }
 
-  private Double askPrice;
-  private Integer askSize;
-
   @Override
   public String getId() {
-    return null;
+    return ticker;
   }
 
   @Override
   public void setId(String s) {
-
+    this.ticker = s;
   }
 }
