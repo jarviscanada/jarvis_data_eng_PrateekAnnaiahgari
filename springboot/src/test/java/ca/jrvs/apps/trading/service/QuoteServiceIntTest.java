@@ -86,7 +86,7 @@ public class QuoteServiceIntTest {
     quoteService.updateMarketData();
     List<Quote> quotes = quoteService.findAllQuotes();
     assertEquals(1, quotes.size());
-    assertEquals(quotes.get(0).getTicker(),"AAPL");
+    assertEquals(quotes.get(0).getTicker(),"FB");
   }
 
 }
