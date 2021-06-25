@@ -1,7 +1,6 @@
 package ca.jrvs.apps.trading.dao;
 
 import ca.jrvs.apps.trading.model.domain.Account;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import java.util.Optional;
 import javax.sql.DataSource;
 import org.slf4j.Logger;

@@ -36,12 +36,7 @@ public class AppConfig {
 
   @Bean
   public DataSource dataSource() {
-    jdbcUrl =
-        "jdbc:postgresql://" +
-            System.getenv("PSQL_HOST") + ":" +
-            System.getenv("PSQL_PORT") +
-            "/" +
-            System.getenv("PSQL_DB");
+    jdbcUrl =System.getenv("PSQL_URL");
     user = System.getenv("PSQL_USER");
     password = System.getenv("PSQL_PASSWORD");
 
