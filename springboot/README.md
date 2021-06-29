@@ -1,10 +1,10 @@
 Table of contents
-* [Introduction](# Introduction)
-* [Quick Start](# Quick start)
-* [Implementation](# Implementation)
-* [Test](# Test)
-* [Deployment](# Deployment)
-* [Improvements](# Improvements)
+* [Introduction](#Introduction)
+* [Quick Start](#Quick Start)
+* [Implementation](#Implementation)
+* [Test](#Test)
+* [Deployment](#Deployment)
+* [Improvements](#Improvements)
 
 # Introduction
 Jarvis's trading team wants to replace the existing monolithic application with a new microservice application.
