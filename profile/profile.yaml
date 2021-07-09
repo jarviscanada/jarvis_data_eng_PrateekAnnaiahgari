@@ -89,18 +89,6 @@ professional_experience:
 
 #List of edcuation
 education: 
-  - school_name: "Jawaharlal Nehru Technological University, Hyderabad"
-    duration: "2013-2017"
-    degree: "Bachelor of Technology"
-    department: "Electronics and Communication Engineering"
-    awards_achievements: 
-
-  - school_name: "Fanshawe College"
-    duration: "2018-2019"
-    degree: "Post Graduate Certificate"
-    department: "Electronics and Embedded Systems Development"
-    awards_achievements: 
-   
   - school_name: "Fanshawe College"
     duration: "2019-2020"
     degree: "Post Graduate Certificate"
@@ -109,23 +97,30 @@ education:
       - "President's Honour Roll"
       - "GPA: 4.18/4.2"
 
+  - school_name: "Fanshawe College"
+    duration: "2018-2019"
+    degree: "Post Graduate Certificate"
+    department: "Electronics and Embedded Systems Development"
+    awards_achievements: 
+
+  - school_name: "Jawaharlal Nehru Technological University, Hyderabad"
+    duration: "2013-2017"
+    degree: "Bachelor of Technology"
+    department: "Electronics and Communication Engineering"
+    awards_achievements: 
+   
+
+
 #Optional section
 others:
     #category
   - title: "Certificates"
     #list of items
     bullets:
-        - "Scala & Functional Programming for Beginners by Daniel Ciocirlan on Udemy"
-        - "Funtional Programming principles in Scala by Martin Odersky, EPFL on Coursera"
-        - "Spark 3.0 & Big Data Essentials with Scala by Daniel Ciocirlan on Udemy"
-        - "Modern Big Data Analysis with SQL Specialization by Cloudera on Coursera"
-        - "Using Python to access web data by University of Michigan on Coursera"
-        - "Python Data Structures by University of Michigan on Coursera"
-        - "Linux Shell Scripting: A Project-Based Approach to Learning by Jason Cannon on Udemy"
-
-  - title: "Activities/Hobbies"
-    bullets:
-      - "Basketball player"
-      - "Playing mutiplayer online battle video games"
-      - "Hiking"
-      - "Cycling"
+      - "Scala & Functional Programming for Beginners by Daniel Ciocirlan on Udemy"
+      - "Funtional Programming principles in Scala by Martin Odersky, EPFL on Coursera"
+      - "Spark 3.0 & Big Data Essentials with Scala by Daniel Ciocirlan on Udemy"
+      - "Modern Big Data Analysis with SQL Specialization by Cloudera on Coursera"
+      - "Using Python to access web data by University of Michigan on Coursera"
+      - "Python Data Structures by University of Michigan on Coursera"
+      - "Linux Shell Scripting: A Project-Based Approach to Learning by Jason Cannon on Udemy"
