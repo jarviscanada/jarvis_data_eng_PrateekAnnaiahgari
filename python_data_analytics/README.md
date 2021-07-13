@@ -8,7 +8,7 @@ This Proof-of-Concept project utilizes Python Jupyter Notebook and various pytho
 ## Project Architecture
 LGS's sytem maintains their web application, both front-end and backend in an integrated Microsoft Azure Environment. After dumping the client's personal information using an ETL process, the LGS IT team has provided the Jarvis team with the transaction data from the year 2009 to 2011 into the `retail.sql` file. The file is used to store the data into a PostgresSql Database and the data is analysed and visualized using a Jupyter Notebook.  
 
-![Architecture](assets/architecture.png)
+![Architecture](assets/architecture.PNG)
 
 ## Data Analytics and Wrangling
 - Jupyter Notebook: [retail_data_analytics_wrangling.ipynb](retail_data_analytics_wrangling.ipynb)
