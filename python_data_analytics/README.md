@@ -1,5 +1,5 @@
 # Introduction
-London Gift Shop (LGS) is an online gift-ware store in London, UK. The Store has been underdeveloping in terms of revenue in the recent years. The LGS marketing team has collaborated with Jarvis to use IT based data analysis to study their customer shopping behavior.  
+London Gift Shop (LGS) is an online gift-ware store in London, UK. The Store's revenue has been dwindling in the recent years. The LGS marketing team has collaborated with Jarvis to use IT based data analysis to study their customer shopping behavior.  
 The LGS marketing will use the analytics to develop better sales and marketing strategies to retain existing customers and attract new customers.    
 
 This Proof-of-Concept project utilizes Python Jupyter Notebook and various python libraris like; `Pandas`, `Numpy` and `MatPlotLib`; to perform data analysis and data visualization. Client retail data was loaded into a PostgreSql Database and later imported to Jupyter Notebook. 
