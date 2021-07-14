@@ -1,6 +1,6 @@
 # Sai Prateek Reddy Annaiahgari . Jarvis Consulting
 
-I am a gradute of Electronics and Communication Engineering program with a specialization in Embedded Systems from Jawaharlal Nehru Technological Univarsity, Hyderabad, India. With a strong foundation in basic programming principles and analytical skills, I decided to explore the concepts of software engineering and expand my technical knowledge to pursue a career in Software Development. I have utilized various free online resources to learn different programming languages like python, C#, Java and Scala, and various tools by Apache Software Foundation. The improved knowledge helped me secure a job at Jarvis as a Data Engineer. At Jarvis, I learned to work as a team in a dynamic environment and develop efficient sofware solutions to complex real-world business problems. As a result of my abilty to quickly learn new technologies in a dynamic field like Data engineering, I will be a great fit to an equally dynamic team and organisation as a Data Engineer.
+I am a recent graduate with strong knowledge of software design, development, and testing. I have experience in different programming languages like C, python, C#, Java and Scala and various tools by Apache Software Foundation. My broad educational background with excellent analytical, technical, and programming skills has helped me secure a job at Jarvis as a Data Engineer. At Jarvis, I have worked as a team to develop efficient software solutions to complex real-world business problems. As a result of my abilty to quickly learn new technologies in a dynamic field like Software engineering, I will be a great fit to an equally dynamic team and organisation as a Software Engineer.
 
 ## Skills
 
@@ -15,7 +15,7 @@ I am a gradute of Electronics and Communication Engineering program with a speci
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari/tree/master/linux_sql)]: Developed a Linux Cluster Monitoring agent to log hardware specifications, and the resource usage of each node in the Linux cluster of 10 nodes, running on CentOS7. The agent uses two srcipts onr for host info and the other for host usage. The scripts send the data to PostGreSQL databse running on Docker. The usage data is collected every minute using Crontab. The collected data can be queried using SQL to answer specific resource usage questions.
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari/tree/master/linux_sql)]: Developed a Linux Cluster Monitoring agent program using Linux Bash script to log hardware specifications, and the resource usage of each node in a Linux cluster running on CentOS7. The shell script can insert data into a PostgreSQL database which is provisioned using docker. The usage data is collected every minute using Crontab. Collected data can be queried using SQL to answer specific resource usage questions.
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari/tree/master/core_java)]:
       
@@ -25,9 +25,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PrateekAnn
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari/tree/master/springboot)]: Developed a proof-of-concept trading application in java that uses microservice architecture to replace Jarvis's exisiting monolithic application. Provides features for users to manage trading accounts, pull and post market data. Managed using Maven and Springboot. Database connectivity using DataSource and JDBC APIs. Tested the app using Junit4 integration tests. Deployed as web servlet with SwaggerUI and Apache Tomcat using docker on Dockerhub.
 
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari/tree/master/python_data_anlytics)]: Currently in progress!
+**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari/tree/master/python_data_anlytics)]: Analysed retail data of London Gift Shop(LGS), a client of jarvis, to investigate the dwindling revenue in recent years.Stored the customer data in a PostgreSQL data warehouse containerized in Docker. Used Pandas, Numpy and MatplotLib for data wrangling and visualization; and saved the analysis in Jupyter notebook. 
 
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari/tree/master/hadoop)]: Not Started
+**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari/tree/master/hadoop)]: Currently in progress!
 
 **Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_PrateekAnnaiahgari/tree/master/spark)]: Not Started
 
@@ -46,13 +46,13 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PrateekAnn
 
 
 ## Education
-**Jawaharlal Nehru Technological University, Hyderabad (2013-2017)**, Bachelor of Technology, Electronics and Communication Engineering
-
-**Fanshawe College (2018-2019)**, Post Graduate Certificate, Electronics and Embedded Systems Development
-
 **Fanshawe College (2019-2020)**, Post Graduate Certificate, Geographic Information Systems
 - President's Honour Roll
 - GPA: 4.18/4.2
+
+**Fanshawe College (2018-2019)**, Post Graduate Certificate, Electronics and Embedded Systems Development
+
+**Jawaharlal Nehru Technological University, Hyderabad (2013-2017)**, Bachelor of Technology, Electronics and Communication Engineering
 
 
 ## Miscellaneous
@@ -63,7 +63,3 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_PrateekAnn
 - Using Python to access web data by University of Michigan on Coursera
 - Python Data Structures by University of Michigan on Coursera
 - Linux Shell Scripting: A Project-Based Approach to Learning by Jason Cannon on Udemy
-- Basketball player
-- Playing mutiplayer online battle video games
-- Hiking
-- Cycling
